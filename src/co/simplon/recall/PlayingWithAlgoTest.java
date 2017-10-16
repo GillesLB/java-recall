@@ -22,7 +22,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * selects elements starting with a
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void selectElementsStartingWithA() {
 		String arrayIn[] = { "bananas", "apples", "pears", "avocados" };
 		ArrayList<String> resultat = new ArrayList<String>();
@@ -35,7 +35,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * selects elements starting with a vowel
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void selectElementsStartingWithVowel() {
 		String arrayIn[] = { "john", "david", "omar", "fred", null, "idris", "angela" };
 		ArrayList<String> resultat = new ArrayList<String>();
@@ -104,7 +104,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * gets the first half of a string
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void  getFirstHalf() {
 		assertEquals("dra", PlayingWithAlgo.getFirstHalf("dragon"));
 		assertEquals("sna", PlayingWithAlgo.getFirstHalf("snake"));
@@ -226,10 +226,11 @@ public class PlayingWithAlgoTest {
 		assertArrayEquals(result2, PlayingWithAlgo.findAnagrams("ma"));
 	}	
 	
+	
 	/**
 	 * for each letter, find its position in the alphabet
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void  letterPosition() {
 		int[] result = {8, 5, 12, 12, 15, 11, 9, 20, 20, 25};
 		assertArrayEquals(result, PlayingWithAlgo.letterPosition("HelloKitty"));
@@ -324,7 +325,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * ecrire l'algorithme du tri bulle
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void sortTabByBubble() {
 		int[] arrayIn = new int[] {0,23,52,17,-5,17,15,9,16};
 		int[] arrayOut = {-5,0,9,15,16,17,17,23,52};
@@ -359,7 +360,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * donner le dernier jour du mois
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void findAllLastDayMonth() {
 		assertEquals(31, PlayingWithAlgo.findLastDayOfMonth(07, 2017));
 		assertEquals(30, PlayingWithAlgo.findLastDayOfMonth(11, 2017));
@@ -397,7 +398,7 @@ public class PlayingWithAlgoTest {
 	}
 	
 	
-	@Test
+	//	Done	---------------------------------------------------------------------------------------
 	public void checkIfPairPairImpair() {
 		assertEquals(false, PlayingWithAlgo.checkIfPairPairImpair(10, 20, 10));
 		assertEquals(false, PlayingWithAlgo.checkIfPairPairImpair(10, 21, 10));
@@ -409,7 +410,7 @@ public class PlayingWithAlgoTest {
 	}
 	
 	
-	@Test	//	Done	---------------------------------------------------------------------------------------
+	//	Done	---------------------------------------------------------------------------------------
 	public void checkIfSumIsPair() {
 		assertEquals(true, PlayingWithAlgo.checkIfSumIsPair(10, 20, 10));
 		assertEquals(false, PlayingWithAlgo.checkIfSumIsPair(10, 21, 10));
@@ -431,7 +432,7 @@ public class PlayingWithAlgoTest {
 	}
 	
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void exportAllElementsPair() {
 		int arrayIn[] = {  2, 3, 2, 0,  4, 11, 6,  8 };
 		ArrayList<Integer> resultat = new ArrayList<Integer>();
@@ -446,6 +447,7 @@ public class PlayingWithAlgoTest {
 		ArrayList<Integer> resultat1 = new ArrayList<Integer>();
 		assertEquals(resultat1, PlayingWithAlgo.exportAllElementsPair(arrayIn1) );
 	}
+	
 	
 	@Test
 	public void exportAllUniqueElementsPair() {
@@ -469,7 +471,7 @@ public class PlayingWithAlgoTest {
 		assertEquals(resultat2, PlayingWithAlgo.exportAllUniqueElementsPair(arrayIn2) );
 	}
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void checkIfTriangleRectangle() {
 		assertEquals(true, PlayingWithAlgo.checkIfTriangleRectangle(3, 4, 5));
 		assertEquals(true, PlayingWithAlgo.checkIfTriangleRectangle(5, 4, 3));
@@ -487,8 +489,7 @@ public class PlayingWithAlgoTest {
 		assertEquals(false, PlayingWithAlgo.checkSiTuPeuxAcheter(23));
 		
 	}
-	
-	
+		
 	
 	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void checkCase1() {
@@ -508,7 +509,8 @@ public class PlayingWithAlgoTest {
 		assertEquals(true, PlayingWithAlgo.checkCase2(13, 8));		
 	}
 	
-	@Test
+	
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void checkCase2a() {
 		assertEquals(true, PlayingWithAlgo.checkCase2a(13,14));
 		assertEquals(true, PlayingWithAlgo.checkCase2a(14,13));
@@ -516,8 +518,8 @@ public class PlayingWithAlgoTest {
 		assertEquals(false, PlayingWithAlgo.checkCase2a(13, 8));		
 	}
 	
-
-	@Test
+	
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void checkCase3() {
 		assertEquals(true, PlayingWithAlgo.checkCase3(13,14,17));
 		assertEquals(true, PlayingWithAlgo.checkCase3(14,13, 10));
@@ -525,7 +527,7 @@ public class PlayingWithAlgoTest {
 		assertEquals(false, PlayingWithAlgo.checkCase3(5, 13, 8));		
 	}
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------	
 	public void allElementsExceptFirstAndLast() {
 		int[] arrayIn = {  2, 3, 2, 0,  4, 11, 6,  8 };
 		ArrayList<Integer> resultat = new ArrayList<Integer>();
@@ -544,8 +546,9 @@ public class PlayingWithAlgoTest {
 		ArrayList<Integer> resultat2 = new ArrayList<Integer>();
 		assertEquals(resultat2, PlayingWithAlgo.allElementsExceptFirstAndLast(arrayIn2) );
 	}
+
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------	
 	public void allElementsExceptFirstAndLastInt() {
 		int[] arrayIn = {2, 3, 2, 0, 4, 11, 6,  8 };
 		int[] arrayOut = {  3, 2, 0, 4, 11, 6 };	
@@ -558,6 +561,7 @@ public class PlayingWithAlgoTest {
 		assertArrayEquals(arrayOut2, PlayingWithAlgo.allElementsExceptFirstAndLastInt(arrayIn2) );
 	}
 	
+
 	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void allElementsWithIndexPair() {
 		int[] arrayIn = {  2, 3, 2, 0,  4, 11, 6,  8 };
@@ -578,6 +582,7 @@ public class PlayingWithAlgoTest {
 		assertEquals(resultat2, PlayingWithAlgo.allElementsWithIndexPair(arrayIn2) );
 	}
 	
+	
 	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void reverseOrder() {
 		int[] arrayIn = {  2, 3, 2, 0,  4, 11, 6,  8 };
@@ -593,7 +598,6 @@ public class PlayingWithAlgoTest {
 		assertEquals(resultat, PlayingWithAlgo.reverseOrder(arrayIn) );
 		int[] arrayIn1 = {  9, 3, 11 };
 		ArrayList<Integer> resultat1 = new ArrayList<Integer>();
-		
 		resultat1.add(11);
 		resultat1.add(3);
 		resultat1.add(9);
@@ -605,7 +609,8 @@ public class PlayingWithAlgoTest {
 		assertEquals(resultat2, PlayingWithAlgo.reverseOrder(arrayIn2) );
 	}
 	
-	@Test
+	
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void reverseOrderInt() {
 		int[] arrayIn = {  2, 3, 2, 0,  4, 11, 6,  8 };
 		int[] arrayOut = {  8,6,11,4,0,2,3,2 };
@@ -748,8 +753,7 @@ public class PlayingWithAlgoTest {
 		assertEquals(true, PlayingWithAlgo.checkIfStringStartsWithVowel( "YGY" ) );
 	}
 	
-	
-	
+		
 	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void checkIfStringEndsWithS() {
 		
@@ -765,7 +769,7 @@ public class PlayingWithAlgoTest {
 		assertEquals("la", PlayingWithAlgo.findShortestWord(arrayIn) );
 	}
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void swapFirstandLastLetter() {
 		
 		assertEquals("uukk",PlayingWithAlgo.swapFirstandLastLetter( "kuku" ) );
