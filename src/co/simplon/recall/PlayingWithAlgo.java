@@ -18,41 +18,79 @@ public class PlayingWithAlgo {
 		return message;
 	}
 	
-
+	//	Done	---------------------------------------------------------------------------------------
 	public static List<String> selectElementsStartingWithA(String array[]) {
 		int longueur = array.length;
+		ArrayList<String> resultat = new ArrayList();
 		for (int loop = 0; loop < longueur; loop++) {
-			if (array[loop] = 'a') {
-				
+			if (array[loop].charAt(0) == 'a') {
+				resultat.add(array[loop]);
 			}
 		}
-		return null;
+		return resultat;
 	}
 
+	//	Done	---------------------------------------------------------------------------------------
 	public static List<String> selectElementsStartingWithVowel(String array[]) {
-		return null;
+		int longueur = array.length;
+		ArrayList<String> resultat = new ArrayList();
+		for (int loop = 0; loop < longueur; loop++) {
+			if (array[loop] == null) {
+				array[loop] = " ";
+			}
+			else if ((array[loop].charAt(0) == 'a') || (array[loop].charAt(0) == 'e') || (array[loop].charAt(0) == 'i') || (array[loop].charAt(0) == 'o') || (array[loop].charAt(0) == 'u') || (array[loop].charAt(0) == 'y')) {
+				resultat.add(array[loop]);
+			}
+		}
+		return resultat;
 	}
 
+	
+	
 	public static String[] removeNullElements(String array[]) {
-		return null;
+			int longueur = array.length;
+			ArrayList<String> resultat = new ArrayList();
+			for (int loop = 0; loop < longueur; loop++) {
+				if (array[loop] == null) {
+					resultat.remove(array[loop]);
+				} else {
+					resultat.add(array[loop]);
+				}
+			}
+			int longueur2 = resultat.size();
+			String[] resultat2 = new String[longueur2];
+			for (int loop = 0; loop < longueur2; loop++) {
+				resultat2[loop] = resultat[loop];
+				}
+		return resultat2;
 	}
+		
+	
+		
 
+	
 	public static String[] reverseWordsInMyStringArray(String array[]) {
 		int longueur = array.length;
-		String inverse;
-		String arrayOut;
+		String[] inverse = new String[longueur];
+		String[] resultat = new String[longueur];
 		for (int loop = 0; loop < longueur; loop++) {
 			int mesure = array.length;
 			for (int i = mesure - 1; i >= 0; i--) {
 				inverse = inverse + array[loop];
 				}
-			arrayOut(loop) = inverse(loop);
+			resultat(loop) = inverse(loop);
 		}
-		return arrayOut;
+		return resultat;
 	}
 
 	
 	public static String[] reverseOrderInArray(String array[]) {
+		int longueur = array.length;
+		String[] array2 = new String[longueur];
+		array2 = array.split(",");
+		
+		
+	
 		return null;
 	}
 
@@ -60,11 +98,19 @@ public class PlayingWithAlgo {
 		return null;
 	}
 
+	
 	public static List<String> sortByLastLetter(String array[]) {
+		
+		ArrayList<String> resultat = new ArrayList<String>();
+		
+		
+		
+		
+	
 		return null;
 	}
 
-	
+	//	Done	---------------------------------------------------------------------------------------
 	public static String getFirstHalf(String string) {
 		int longueur = string.length();
 		String resultat = "";
@@ -74,7 +120,7 @@ public class PlayingWithAlgo {
 			} 
 		} 
 		else {
-			int moyenne = (int)Math.ceil(longueur / 2);
+			int moyenne = (int)(Math.ceil(longueur / 2) + 1);
 			for (int loop = 0; loop < moyenne; loop++) {
 				resultat = resultat + string.charAt(loop);
 				}
@@ -105,23 +151,36 @@ public class PlayingWithAlgo {
 		return 0;
 	}
 	
+	
 	public static String shortestWord(String text) {
 		int longueur = text.length();
-		char[] petit;
+		String petit;
 		int min = 100;
 		char[] compare = text.toCharArray();
 		for (int loop = 0; loop < longueur; loop++) {
-			int mesure = compare[loop].length();
+			int mesure = compare[loop].length;
 			if (mesure < min) {
 				min = mesure;
 				petit =	compare[loop];
 			}
 		}
-			return petit;
+		return petit;
 	}
 
+	
 	public static String longestWord(String text) {
-		return null;
+		int longueur = text.length();
+		String grand;
+		int max = 100;
+		char[] compare = text.toCharArray();
+		for (int loop = 0; loop < longueur; loop++) {
+			int mesure = compare[loop].length;
+			if (mesure > max) {
+				max = mesure;
+				grand =	compare[loop];
+			}
+		}
+		return grand;
 	}
 
 	public static String getAllLetters(String[] array) {
@@ -188,14 +247,18 @@ public class PlayingWithAlgo {
 	
 	
 	public static String[] findAnagrams(String name) {
+		
+		
+	
 		return null;
 	}
 
+	//	Done	---------------------------------------------------------------------------------------
 	public static int[] letterPosition(String name) {
 		int longueur = name.length();
 		name = name.toUpperCase();
 		char[] temporaire = name.toCharArray();
-		int[] nombre;
+		int[] nombre = new int[longueur];
 		for (int loop = 0; loop < longueur; loop++) {
 			nombre[loop] = temporaire[loop];				
 			}
@@ -257,14 +320,15 @@ public class PlayingWithAlgo {
 	
 
 	public static String[] getElementsLowerThanSix(String[] array) {
-		String[] arrayOut;
+		char[] truc = array.toCharArray();
+		ArrayList<Integer> temp = new ArrayList<Integer>();
+		TreeSet<Integer> tree = new TreeSet<Integer>();
 		int longueur = array.length;
 		for (int loop = 0; loop < longueur; loop++) {
-			if (array.charAt(loop) <= 6) {
-				arrayOut[loop] = array[loop];
+			temp.add(array[loop]);
+			tree.addAll(array);
 			}
-		}
-		return arrayOut;
+		return tree;
 	}
 	
 	public static int[] sortTabBySelection(int[] array) {
@@ -275,9 +339,20 @@ public class PlayingWithAlgo {
 		return null;
 	}
 
+	//	Done	---------------------------------------------------------------------------------------
 	public static int[] sortTabByBubble(int[] array) {
-
-		return resultat;
+		int longueur = array.length;
+		int temp = 0;
+		for (int rangMax = longueur - 1; rangMax >= 1; rangMax--) {
+			for (int rang = 0; rang < longueur - 1; rang++) {
+				if (array[rang] > array[rang + 1]) {
+					temp = array[rang + 1];
+					array[rang + 1] = array[rang];
+					array[rang] = temp;
+				}
+			}
+		}
+		return array;
 	}
 	
 	public static int findIndexByDichotomy(int elemet, int[] array) {
@@ -324,9 +399,9 @@ public class PlayingWithAlgo {
 		return pair;
 	}
 	
-	
+	//	Done	---------------------------------------------------------------------------------------
 	public static boolean checkIfPairPairImpair(int number1, int number2, int number3) {
-		boolean exact = true;
+		boolean exact = false;
 		if ((number1 % 2 == 0) && (number2 % 2 == 0) && (number3 % 2 != 0)) {
 			exact = true;
 		}
@@ -358,17 +433,41 @@ public class PlayingWithAlgo {
 		return pair;
 	}
 	
-	
+	//	Done	---------------------------------------------------------------------------------------
 	public static ArrayList<Integer> exportAllElementsPair(int[] array) {
-		return null;
+		int longueur = array.length;
+		ArrayList<Integer> resultat = new ArrayList<Integer>();
+		for (int loop = 0; loop < longueur; loop++) {
+			if (array[loop] % 2 == 0) {
+				resultat.add(array[loop]);
+			}
+		}
+		return resultat;
 	}
 	
+		
 	public static ArrayList<Integer> exportAllUniqueElementsPair(int[] array) {
-		return null;
+		int longueur = array.length;
+		ArrayList<Integer> resultat = new ArrayList<Integer>();
+		HashSet<Integer> sansDoublon = new HashSet<Integer>();
+		for (int loop = 0; loop < longueur; loop++) {
+			if (array[loop] % 2 == 0) {
+				resultat.add(array[loop]);
+			}
+			sansDoublon.addAll(resultat);
+			resultat.clear();
+			resultat.addAll(sansDoublon);
+		}
+		return resultat;
 	}
 	
+	//	Done	---------------------------------------------------------------------------------------
 	public static boolean checkIfTriangleRectangle(int number1, int number2, int number3) {
-		return false;
+		boolean triangleRectangle = false;
+		if ((number1 * number1 + number2 * number2 == number3 * number3) || (number1 * number1 + number3 * number3 == number2 * number2) || (number2 * number2 + number3 * number3 == number1 * number1)) {
+			triangleRectangle = true;
+		}		
+		return triangleRectangle;
 	}
 	
 	//	Done	---------------------------------------------------------------------------------------
@@ -404,42 +503,45 @@ public class PlayingWithAlgo {
 		return divParSept;
 	}
 		
-	
-	
+	//	Done	---------------------------------------------------------------------------------------
 	public static boolean checkCase2a(int number1, int number2) {
 		// check si une de 2 chiffres mais pas leur somme se divise par 7
 		boolean divParSept = false;
-		if (number1 % 7 == 0 || number2 % 7 == 0) {
+		if ((number1 % 7 == 0 || number2 % 7 == 0) && ((number1 + number2) % 7 != 0)) {
 			divParSept = true;
-		} else
+		}
 		return divParSept;
-		
-		
-		
-		
-		return false;
 	}
 	
+	//	Done	---------------------------------------------------------------------------------------
 	public static boolean checkCase3(int number1, int number2, int number3) {
 		// check si les trois chiffres sont dans l'ordre, soit croissant ou decroissant
-		return false;
-	}
-	
-	public static ArrayList<Integer> allElementsExceptFirstAndLast(int array[]) {
-		int longueur = array.length;
-		
-		List arrayOut = new LinkedList();
-		for (int loop = 1; loop < longueur - 1); loop++) {
-			arrayOut.add(array[loop]);
+		boolean tri = false;
+		if ((number1 < number2) && (number2 < number3) || (number1 > number2) && (number2 > number3)) {
+			tri = true;
 		}
-		return arrayOut;
+		return tri;
 	}
 	
+	//	Done	---------------------------------------------------------------------------------------
+	public static ArrayList<Integer> allElementsExceptFirstAndLast(int array[]) {
+		ArrayList<Integer> resultat = new ArrayList<Integer>();
+		int longueur = array.length;
+		for (int loop = 1; loop < longueur - 1; loop++) {
+		resultat.add(array[loop]);
+		}
+		return resultat;
+	}
+	
+	//	Done	---------------------------------------------------------------------------------------
 	public static int[] allElementsExceptFirstAndLastInt(int array[]) {
 		int longueur = array.length;
-		int[] arrayOut;
-		for(int loop = 1; loop <= longueur - 2; loop++) {
-		arrayOut[loop] = array[loop];
+		int[] arrayOut = new int[longueur - 2];
+		if (longueur <=2) {
+		} else if (longueur > 2) {
+			for (int loop = 1; loop <= longueur - 2; loop++) {
+				arrayOut[loop - 1] = array[loop];
+			}
 		}
 		return arrayOut;
 	}
@@ -466,12 +568,14 @@ public class PlayingWithAlgo {
 		return resultat;
 	}
 	
+	//	Done	---------------------------------------------------------------------------------------
 	public static int[] reverseOrderInt(int array[]) {
-		
 		int longueur = array.length;
+		int rang = longueur;
 		int[] inverseArray = new int[longueur];
-		for (int loop = longueur - 1; loop >= 0; loop-- ) {
-			inverseArray = inverseArray + array[loop];
+		for (int loop = 0; loop < longueur; loop++ ) {
+			inverseArray[loop] = array[rang - 1];
+			rang--;
 			}
 		return inverseArray;		
 		}
@@ -496,15 +600,28 @@ public class PlayingWithAlgo {
 	}
 	
 	public static ArrayList<Integer> exportElementsPair( ArrayList<Integer> list ) {
-		
+		int longueur = list.size();
+		ArrayList<Integer> list2 = new ArrayList<Integer>();
+		if (longueur % 2 == 0) {
+			for (int loop = longueur - 1; loop >= 0; loop -= 2) {
+			list2.add(loop, list[loop]);
+		}
 		return null;
 	}
 	
 	public static ArrayList<Integer> exportElementsWithIndexPair( ArrayList<Integer> list ) {
+		int longueur = list.size();
+		ArrayList<Integer> list2 = new ArrayList<Integer>();
+		if (longueur % 2 == 0) {
+			for (int loop = longueur - 1; loop >= 0; loop -= 2) {
+			list2.add(list[loop]);		
+		
 		return null;
 	}
 	
+			
 	public static int Addition( HashMap<String, Integer> addition ) {
+	
 		return 0;
 	}
 	
@@ -548,11 +665,13 @@ public class PlayingWithAlgo {
 	
 	public static String findShortestWord(String[] array ) {
 		int longueurMin = 100;
-		String minimum[];
-		String mini;
+		String[] minimum = new String[20];
+		String mini = "";
 		for (int i = 0; i < array.length; i++) {
 			int longueur = array[i].length();
-			if (longueur < longueurMin) {
+			if (longueur >= longueurMin) {
+			}
+			else if (longueur < longueurMin) {
 				longueur = longueurMin;
 				minimum[i] = array[i];
 				mini = minimum[i];
@@ -561,18 +680,20 @@ public class PlayingWithAlgo {
 		return mini;
 	}
 	
+	//	Done	---------------------------------------------------------------------------------------
 	public static String swapFirstandLastLetter(String array ) {
 		int longueur = array.length();
-		array = replace(array[0], array[longueur - 1]);
-		char tempo = ' ';
 		char[] echange = array.toCharArray();
+		String deux = "";
 		if (longueur == 1) {
 		} else {
-		tempo = echange[0];
-		echange[0] = echange[longueur - 1];
-		echange[longueur - 1] = tempo;
+			deux = deux + echange[longueur - 1];
+			for (int loop = 1; loop < longueur - 1; loop++) {
+				deux = deux + echange[loop];
+			}
+			deux = deux + echange[0];
 		}
-		return echange;
+		return deux;
 	}
 	
 	//	Done	---------------------------------------------------------------------------------------
