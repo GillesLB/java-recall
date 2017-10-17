@@ -611,6 +611,7 @@ public class PlayingWithAlgo {
 	
 	public static ArrayList<Integer> exportElementsPair( ArrayList<Integer> list ) {
 		int longueur = list.size();
+<<<<<<< HEAD
 		String[] resultat = new String[longueur];
 		list.CopyTo(resultat);
 			for (int loop = longueur - 1; loop >= 0; loop -= 2) {
@@ -620,6 +621,13 @@ public class PlayingWithAlgo {
 			list2.add(loop, list[loop]);
 			}
 		
+=======
+		ArrayList<Integer> list2 = new ArrayList<Integer>();
+		if (longueur % 2 == 0) {
+			for (int loop = longueur - 1; loop >= 0; loop -= 2) {
+			list2.add(loop, list[loop]);
+		}
+>>>>>>> master
 		return null;
 	}
 	
@@ -629,15 +637,24 @@ public class PlayingWithAlgo {
 		if (longueur % 2 == 0) {
 			for (int loop = longueur - 1; loop >= 0; loop -= 2) {
 			list2.add(list[loop]);		
+<<<<<<< HEAD
 			}
 		}
+=======
+		
+>>>>>>> master
 		return null;
 	}
 	
 			
 	public static int Addition( HashMap<String, Integer> addition ) {
+<<<<<<< HEAD
 		int resultat = elements(addition);
 		return resultat;
+=======
+	
+		return 0;
+>>>>>>> master
 	}
 	
 	//	Done	---------------------------------------------------------------------------------------
