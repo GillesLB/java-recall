@@ -315,7 +315,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * ecrire l'algorithme du tri par insertion
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void sortTabByInsertion() {
 		int[] arrayIn = {0,23,52,17,-5,17,15,9,16};
 		int[] arrayOut = {-5,0,9,15,16,17,17,23,52};
