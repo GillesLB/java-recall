@@ -102,13 +102,31 @@ public class PlayingWithAlgo {
 		return null;
 	}
 
+	
 	public static List<String> sortByLastLetter(String array[]) {
-		return null;
+		int longueur = array.length;
+		ArrayList<String> resultat = new ArrayList<String>();
+			for (int loop = 0; loop < longueur; loop++) {
+				resultat.add(array[loop]);
+			}
+			for (int i = 0; i < longueur; i++) {
+				int loTemp = resultat.get(i).length();
+				resultat.add(0, resultat.get(loTemp - 1));
+				resultat.remove(resultat.get(loTemp - 1));
+			}
+			Collections.sort(resultat);
+			for (int i = 0; i < longueur; i++) {
+				int loTemp = resultat.get(i).length();
+				resultat.add(loTemp - 1, resultat.get(0));
+				resultat.remove(resultat.get(0));
+			}
+		
+		return resultat;
 	}
 
 	// Done
-		// ---------------------------------------------------------------------------------------
-		public static String getFirstHalf(String string) {
+	// ---------------------------------------------------------------------------------------
+	public static String getFirstHalf(String string) {
 			int longueur = string.length();
 			String resultat = "";
 			if ((longueur % 2) == 0) {
@@ -125,7 +143,7 @@ public class PlayingWithAlgo {
 		}
 
 		
-		public static String exportWordWithoutALetter(String array[], char letter) {
+	public static String exportWordWithoutALetter(String array[], char letter) {
 			int longueur = array.length;
 			ArrayList<String> temp = new ArrayList<String>();
 			for (int loop = 0; loop < longueur; loop++) {
@@ -150,7 +168,7 @@ public class PlayingWithAlgo {
 		}
 
 		
-		public static int numberOfPalindromeWord(String text) {
+	public static int numberOfPalindromeWord(String text) {
 			String inverse = "";
 			int reponse = 0;
 			int longueur = text.length();
