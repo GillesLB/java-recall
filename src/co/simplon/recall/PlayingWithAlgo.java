@@ -21,7 +21,7 @@ public class PlayingWithAlgo {
 		// ---------------------------------------------------------------------------------------
 		public static List<String> selectElementsStartingWithA(String array[]) {
 			int longueur = array.length;
-			ArrayList<String> resultat = new ArrayList();
+			ArrayList<String> resultat = new ArrayList<String>();
 			for (int loop = 0; loop < longueur; loop++) {
 				if (array[loop].charAt(0) == 'a') {
 					resultat.add(array[loop]);
@@ -34,7 +34,7 @@ public class PlayingWithAlgo {
 		// ---------------------------------------------------------------------------------------
 		public static List<String> selectElementsStartingWithVowel(String array[]) {
 			int longueur = array.length;
-			ArrayList<String> resultat = new ArrayList();
+			ArrayList<String> resultat = new ArrayList<String>();
 			for (int loop = 0; loop < longueur; loop++) {
 				if (array[loop] == null) {
 					array[loop] = " ";
@@ -49,7 +49,7 @@ public class PlayingWithAlgo {
 
 		public static String[] removeNullElements(String array[]) {
 			int longueur = array.length;
-			ArrayList<String> resultat = new ArrayList();
+			ArrayList<String> resultat = new ArrayList<String>();
 			for (int loop = 0; loop < longueur; loop++) {
 				if (array[loop] == null) {
 					resultat.remove(array[loop]);
@@ -67,22 +67,37 @@ public class PlayingWithAlgo {
 
 		public static String[] reverseWordsInMyStringArray(String array[]) {
 			int longueur = array.length;
-			String[] inverse = new String[longueur];
-			String[] resultat = new String[longueur];
+			ArrayList<String> inverse = new ArrayList<String>();
+			
 			for (int loop = 0; loop < longueur; loop++) {
-				int mesure = array.length;
-				for (int i = mesure - 1; i >= 0; i--) {
-					inverse = inverse + array[loop];
-				}
-				resultat(loop) = inverse(loop);
+				inverse.add(array[loop]);
+				Collections.reverse(inverse.get(loop));
 			}
-			return resultat;
+				
+			return reverse;
 		}
+		
+		
 
 	public static String[] reverseOrderInArray(String array[]) {
-		return null;
+		int longueur = array.length;
+		String couper = array.toString();
+		ArrayList<String> inverse = new ArrayList<String>();
+		String[] parts = couper.split(",");
+		for (int loop = 0; loop < longueur; loop++) {
+			inverse.add(parts[loop]);
+		}
+		Collections.reverse(inverse);
+		Object[] machin = inverse.toArray();
+		int dim = machin.length;
+		String[] dernier = new String[dim];
+		for (int loop = 0; loop < dim; loop++) {
+			dernier[loop] = machin[loop];
+		}
+		return dernier;
 	}
 
+	
 	public static String[][] everyPossiblePair(String array[]) {
 		return null;
 	}
@@ -109,6 +124,7 @@ public class PlayingWithAlgo {
 			return resultat;
 		}
 
+		
 		public static String exportWordWithoutALetter(String array[], char letter) {
 			int longueur = array.length;
 			ArrayList<String> temp = new ArrayList<String>();
@@ -133,6 +149,7 @@ public class PlayingWithAlgo {
 			return arrayOut;
 		}
 
+		
 		public static int numberOfPalindromeWord(String text) {
 			String inverse = "";
 			int reponse = 0;
@@ -312,7 +329,7 @@ public class PlayingWithAlgo {
 			for (int loop = 0; loop < longueur; loop++) {
 				if (truc(loop) <= 6) {
 					temp.add(truc(loop));
-					
+				}	
 			}
 			return tree;
 		}
