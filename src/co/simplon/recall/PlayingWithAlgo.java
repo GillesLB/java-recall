@@ -701,13 +701,12 @@ public class PlayingWithAlgo {
 		return null;
 	}
 	
-	public static int Addition( HashMap<String, Integer> addition ) {
-
-		int resultat = elements(addition);
-		return resultat;
-
 	
-		return 0;
+	public static int Addition( HashMap<String, Integer> addition ) {
+		HashMap<String,Integer> in = new HashMap<String,Integer>();
+		int Addition = in.get("chicken") + in.get("curry") + in.get("coffee");
+		return Addition;
+
 
 	}
 	
