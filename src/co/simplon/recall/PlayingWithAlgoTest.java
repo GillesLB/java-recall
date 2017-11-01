@@ -49,7 +49,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * removes null values from an array
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void removeNullElements() {
 		String arrayIn[] = { "a", "b", null, null, "false", "null" };
 		String arrayOut[] = { "a", "b", "false", "null" };
@@ -655,7 +655,7 @@ public class PlayingWithAlgoTest {
 	}
 	
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void exportElementsPair() {
 		
 		ArrayList<Integer> in = new ArrayList<Integer>();
@@ -684,7 +684,7 @@ public class PlayingWithAlgoTest {
 		assertEquals(out2, PlayingWithAlgo.exportElementsPair(in2) );
 	}
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void exportElementsWithIndexPair() {
 		
 		ArrayList<Integer> in = new ArrayList<Integer>();
@@ -712,7 +712,7 @@ public class PlayingWithAlgoTest {
 		assertEquals(out2, PlayingWithAlgo.exportElementsWithIndexPair(in2) );
 	}
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void Addition() {
 		
 		HashMap<String,Integer> in = new HashMap<String,Integer>();

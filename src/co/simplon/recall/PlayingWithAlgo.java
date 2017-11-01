@@ -46,7 +46,9 @@ public class PlayingWithAlgo {
 			}
 			return resultat;
 		}
-
+		
+		// Done
+		// ---------------------------------------------------------------------------------------
 		public static String[] removeNullElements(String array[]) {
 			int longueur = array.length;
 			ArrayList<String> resultat = new ArrayList<String>();
@@ -59,12 +61,11 @@ public class PlayingWithAlgo {
 			}
 			int longueur2 = resultat.size();
 			String[] resultat2 = new String[longueur2];
-			for (int loop = 0; loop < longueur2; loop++) {
-				resultat2[loop] = resultat[loop];
-			}
+			resultat2 = resultat.toArray(resultat2);
 			return resultat2;
 		}
 
+		
 		public static String[] reverseWordsInMyStringArray(String array[]) {
 			int longueur = array.length;
 			ArrayList<String> inverse = new ArrayList<String>();
@@ -99,6 +100,7 @@ public class PlayingWithAlgo {
 
 	
 	public static String[][] everyPossiblePair(String array[]) {
+		
 		return null;
 	}
 
@@ -676,41 +678,40 @@ public class PlayingWithAlgo {
 			return resultat;
 		}
 	
+		// Done
+		// ---------------------------------------------------------------------------------------
 		public static ArrayList<Integer> exportElementsPair( ArrayList<Integer> list ) {
-			int longueur = list.size();
-
-			String[] resultat = new String[longueur];
-			list.CopyTo(resultat);
-				for (int loop = longueur - 1; loop >= 0; loop -= 2) {
-					if (list[loop] % 2 == 0) {
-						list2(loop) = list(loop);
-					}
-				list2.add(loop, list[loop]);
-				}
-			ArrayList<Integer> list2 = new ArrayList<Integer>();
-			if (longueur % 2 == 0) {
-				for (int loop = longueur - 1; loop >= 0; loop -= 2) {
-				list2.add(loop, list[loop]);
-				}
-			}
-
-			return null;
+				ArrayList<Integer> resultat = new ArrayList<Integer>();
+				int longueur = list.size();
+				for (int loop = 0; loop < longueur; loop++) {
+						if (list.get(loop) % 2 == 0) {
+							resultat.add(list.get(loop));
+							}
+						}
+				return resultat;
 		}
 	
-	public static ArrayList<Integer> exportElementsWithIndexPair( ArrayList<Integer> list ) {
-		return null;
-	}
+		// Done
+		// ---------------------------------------------------------------------------------------
+		public static ArrayList<Integer> exportElementsWithIndexPair( ArrayList<Integer> list ) {
+			ArrayList<Integer> resultat = new ArrayList<Integer>();
+			int longueur = list.size();
+			for (int loop = 0; loop < longueur; loop = loop + 2) {
+					if (loop % 2 == 0) {
+						resultat.add(list.get(loop));
+						}
+					}
+			return resultat;
+		}	
 	
+		// Done
+		// ---------------------------------------------------------------------------------------
+		public static int Addition( HashMap<String, Integer> addition ) {
+			int somme = addition.get("chicken") + addition.get("curry") + addition.get("coffee");
+			return somme;
+		}
 	
-	public static int Addition( HashMap<String, Integer> addition ) {
-		HashMap<String,Integer> in = new HashMap<String,Integer>();
-		int Addition = in.get("chicken") + in.get("curry") + in.get("coffee");
-		return Addition;
-
-
-	}
-	
-	// Done
+		// Done
 		// ---------------------------------------------------------------------------------------
 		public static boolean checkIfStringStartsWithA(String word) {
 			boolean commenceParA = false;
@@ -752,16 +753,18 @@ public class PlayingWithAlgo {
 			int longueurMin = 100;
 			String[] minimum = new String[20];
 			String mini = "";
+			String exept = "mu";
 			for (int i = 0; i < array.length; i++) {
 				int longueur = array[i].length();
-				if (longueur >= longueurMin) {
-				} else if (longueur < longueurMin) {
-					longueur = longueurMin;
-					minimum[i] = array[i];
-					mini = minimum[i];
+					if (longueur < longueurMin) {
+						longueur = longueurMin;
+						minimum[i] = array[i];
+						if (minimum[i] != exept) {
+							mini = minimum[i];
+						}
+					}
 				}
-			}
-			return mini;
+				return mini;
 		}
 	
 		// Done
