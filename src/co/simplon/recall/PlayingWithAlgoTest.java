@@ -141,7 +141,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * returns the shortest word
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void  shortestWord() {
 		String text = "winter is coming";
 		assertEquals("is", PlayingWithAlgo.shortestWord(text));
@@ -295,7 +295,7 @@ public class PlayingWithAlgoTest {
 	/*
 	 * gets elements lower than six
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void getElementsLowerThanSix() {
 		String[] arrayIn = {"1", "3", "50", "4", "1", "2", "6", "2", "10", "3", "7"};
 		String[] arrayOut = {"1", "2", "3", "4", "6"};

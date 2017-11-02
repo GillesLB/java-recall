@@ -21,7 +21,8 @@ public class PlayingWithAlgo {
 		// ---------------------------------------------------------------------------------------
 		public static List<String> selectElementsStartingWithA(String array[]) {
 			int longueur = array.length;
-			ArrayList<String> resultat = new ArrayList<String>();
+			/*ArrayList<String> resultat = new ArrayList<String>();*/
+			List resultat = new ArrayList<String>(); // fonctionne, car interface !!
 			for (int loop = 0; loop < longueur; loop++) {
 				if (array[loop].charAt(0) == 'a') {
 					resultat.add(array[loop]);
@@ -68,14 +69,15 @@ public class PlayingWithAlgo {
 		
 		public static String[] reverseWordsInMyStringArray(String array[]) {
 			int longueur = array.length;
-			ArrayList<String> inverse = new ArrayList<String>();
-			
+			String[] temp = new String[longueur];
 			for (int loop = 0; loop < longueur; loop++) {
-				inverse.add(array[loop]);
-				Collections.reverse(inverse.get(loop));
+				int longueur2 = 0;
+				longueur2 = array[loop].length();
+				for (int i = longueur2 - 1; i >= 0; i--) {
+					temp[i] = temp[i] + array[i];
+				}
 			}
-				
-			return reverse;
+			return temp;
 		}
 		
 		
@@ -171,46 +173,87 @@ public class PlayingWithAlgo {
 
 		
 	public static int numberOfPalindromeWord(String text) {
-			String inverse = "";
-			int reponse = 0;
-			int longueur = text.length();
-			for (int loop = longueur - 1; loop >= 0; loop--) {
-				inverse = inverse + text.charAt(loop);
+		String[] ranger = new String[15];
+		String[] resultat = "";
+		ranger = text.split("'");
+		String[] finalite;
+		for (int i = 0; i < ranger.length; i++) {
+			if (i % 2 != 0) {
+				resultat[i] = ranger[i];
 			}
-			if (inverse.equals(text)) {
-				reponse += 1;
-			}
-			return reponse;
+		}
+
+				
+		return 0;
 		}
 
 	public static int numberOfPalindromeText(String text) {
 		return 0;
 	}
 	
-	public static String shortestWord(String text) {
-		int longueur = text.length();
-		String petit;
-		int min = 100;
-		char[] compare = text.toCharArray();
-		for (int loop = 0; loop < longueur; loop++) {
-			int mesure = compare[loop].length;
-			if (mesure < min) {
-				min = mesure;
-				petit = compare[loop];
-			}
+		// Done
+		// ---------------------------------------------------------------------------------------
+		public static String shortestWord(String text) {
+			String petit = "";
+			int min = 100;
+			int mesure = 0;
+			String[] compare = text.split(" ");
+			int chaine = compare.length;
+			for (int loop = 0; loop < chaine; loop++) {
+				mesure = compare[loop].length();
+				if (mesure < min) {
+					min = mesure;
+					petit = compare[loop];
+				}
+			}	
+			return petit;
 		}
-		return petit;
+		
+		// Done
+		// ---------------------------------------------------------------------------------------
+		public static String longestWord(String text) {
+			String grand = "";
+			int max = 0;
+			int mesure = 0;
+			String s1 = text.substring(0, 9);
+			String s2 = text.substring(10, 37);
+			String compare = s1 + s2;
+			String[] compare2 = compare.split(" ");
+			int chaine = compare2.length;
+			for (int loop = 0; loop < chaine; loop++) {
+				mesure = compare2[loop].length();
+				if (mesure > max) {
+					max = mesure;
+					grand = compare2[loop];
+				}
+			}	
+		return grand;
 	}
 
-	public static String longestWord(String text) {
-		return null;
-	}
-
-	public static String getAllLetters(String[] array) {
-		return null;
-	}
 	
-	// Done
+	
+	public static String getAllLetters(String[] array) {
+		ArrayList<String> verifier = new ArrayList<String>();
+		ArrayList<String> fin = new ArrayList<String>();
+		String[] convert = new String[10];
+		String chaine = "";
+		for (int loop = 0; loop < array.length; loop++) {
+			verifier.add(array[loop]);
+			TreeSet resultat = new TreeSet();
+			resultat.addAll(verifier);
+			fin.addAll(resultat);
+			Collections.sort(fin);
+			convert = fin.toArray(convert);
+			for (int i = 0; i < convert.length; i++) {
+				chaine = chaine + convert[i];
+			}
+			}
+		return chaine;
+		}
+		
+		
+		
+		// Done
 		// ---------------------------------------------------------------------------------------
 		public static String removeCapitals(String text) {
 			text = text.replace("H", "");
@@ -246,11 +289,12 @@ public class PlayingWithAlgo {
 			return email;
 		}
 
-	public static String titleize(String title) {
-		return null;
-	}
+		
+		public static String titleize(String title) {
+			return null;
+		}
 	
-	// Done
+		// Done
 		// ---------------------------------------------------------------------------------------
 		public static boolean checkForSpecialCharacters(String string) {
 			boolean special = true;
@@ -271,11 +315,12 @@ public class PlayingWithAlgo {
 			return special;
 		}
 	
-	public static String[] findAnagrams(String name) {
-		return null;
-	}
+		
+		public static String[] findAnagrams(String name) {
+			return null;
+		}
 
-	// Done
+		// Done
 		// ---------------------------------------------------------------------------------------
 		public static int[] letterPosition(String name) {
 			int longueur = name.length();
@@ -305,11 +350,11 @@ public class PlayingWithAlgo {
 			return somme;
 		}
 
-	public static long addingSeveralNumbers(final long... numbers) {
-		return 0;
-	}
+		public static long addingSeveralNumbers(final long... numbers) {
+			return 0;
+		}
 
-	// Done
+		// Done
 		// ---------------------------------------------------------------------------------------
 		public static int[] allElementsExceptFirstThree(int array[]) {
 			int total = array.length;
@@ -341,32 +386,37 @@ public class PlayingWithAlgo {
 			return number;
 		}
 
+		// Done
+		// ---------------------------------------------------------------------------------------
 		public static String[] getElementsLowerThanSix(String[] array) {
 			int longueur = array.length;
-			ArrayList<Integer> temp = new ArrayList<Integer>();
-			TreeSet<Integer> tree = new TreeSet<Integer>();
-			String truc = array.toString();
+			TreeSet<String> temp = new TreeSet<String>();
+			List<String> coffre = new ArrayList<String>();
 			for (int loop = 0; loop < longueur; loop++) {
-				if (truc(loop) <= 6) {
-					temp.add(truc(loop));
-				}	
+				if (array[loop] == "1" || array[loop] == "2" || array[loop] == "3" || array[loop] == "4" || 
+				array[loop] == "5" || array[loop] == "6") {
+					temp.add(array[loop]);
+				}
 			}
-			return tree;
+			coffre.addAll(temp);
+			Collections.sort(coffre);
+			String[] fin = coffre.toArray(new String[coffre.size()]);
+			return fin;
 		}
 	
 		// Done
 		// ---------------------------------------------------------------------------------------
 		public static int[] sortTabBySelection(int[] array) {
-		int longueur = array.length;
-		ArrayList<Integer> tri = new ArrayList<Integer>();
-		for (int loop = 0; loop < longueur; loop++) {
-			tri.add(array[loop]);
-		}
-		Collections.sort(tri); // tri croissant arraylist
-		for (int i = 0; i < longueur; i++) {
-			array[i] = tri.get(i);
-		}
-        return array;
+			int longueur = array.length;
+			ArrayList<Integer> tri = new ArrayList<Integer>();
+			for (int loop = 0; loop < longueur; loop++) {
+				tri.add(array[loop]);
+			}
+			Collections.sort(tri); // tri croissant arraylist
+			for (int i = 0; i < longueur; i++) {
+				array[i] = tri.get(i);
+			}
+			return array;
         }
    
 	
@@ -403,11 +453,11 @@ public class PlayingWithAlgo {
 			return array;
 		}
 	
-	public static int findIndexByDichotomy(int elemet, int[] array) {
-		return 0;
-	}
+		public static int findIndexByDichotomy(int elemet, int[] array) {
+			return 0;
+		}
 	
-	// Done
+		// Done
 		// ---------------------------------------------------------------------------------------
 		public static int roundUp(float number) {
 			int resultat = (int) Math.round(number);
