@@ -66,39 +66,40 @@ public class PlayingWithAlgo {
 			return resultat2;
 		}
 
-		
+		// Done
+		// ---------------------------------------------------------------------------------------
 		public static String[] reverseWordsInMyStringArray(String array[]) {
 			int longueur = array.length;
-			String[] temp = new String[longueur];
+			String[] resultat = new String[longueur];
 			for (int loop = 0; loop < longueur; loop++) {
 				int longueur2 = 0;
 				longueur2 = array[loop].length();
+				String s = "";
+				s = array[loop];
+				String transition = "";
 				for (int i = longueur2 - 1; i >= 0; i--) {
-					temp[i] = temp[i] + array[i];
+					transition = transition + s.charAt(i);
 				}
+				resultat[loop] = transition;
 			}
-			return temp;
+			
+			return resultat;
 		}
 		
 		
 
-	public static String[] reverseOrderInArray(String array[]) {
-		int longueur = array.length;
-		String couper = array.toString();
-		ArrayList<String> inverse = new ArrayList<String>();
-		String[] parts = couper.split(",");
-		for (int loop = 0; loop < longueur; loop++) {
-			inverse.add(parts[loop]);
+		public static String[] reverseOrderInArray(String array[]) {
+			int longueur = array.length;
+			String couper = array.toString();
+			String[] temp = couper.split(".");
+			String bla = temp[0].toString();
+			String[] temp2 = bla.split(",");
+			String[] resultat = new String[4];
+			for (int loop = longueur - 1; loop >= 0; loop--) {
+				resultat[loop] = temp2[longueur - loop];
+			}
+			return resultat;
 		}
-		Collections.reverse(inverse);
-		Object[] machin = inverse.toArray();
-		int dim = machin.length;
-		String[] dernier = new String[dim];
-		for (int loop = 0; loop < dim; loop++) {
-			dernier[loop] = machin[loop];
-		}
-		return dernier;
-	}
 
 	
 	public static String[][] everyPossiblePair(String array[]) {
@@ -171,19 +172,22 @@ public class PlayingWithAlgo {
 			return arrayOut;
 		}
 
-		
+
 	public static int numberOfPalindromeWord(String text) {
 		String[] ranger = new String[15];
-		String[] resultat = "";
+		String[] resultat;
+		String chaine;
 		ranger = text.split("'");
 		String[] finalite;
 		for (int i = 0; i < ranger.length; i++) {
+		StringBuilder inverse = chaine;
+		for (int loop = 0; loop < ranger.length; loop++) {
 			if (i % 2 != 0) {
 				resultat[i] = ranger[i];
 			}
 		}
-
-				
+		}
+			
 		return 0;
 		}
 
@@ -351,6 +355,10 @@ public class PlayingWithAlgo {
 		}
 
 		public static long addingSeveralNumbers(final long... numbers) {
+			// utiliser les varargs
+		
+			 
+		
 			return 0;
 		}
 
@@ -561,17 +569,17 @@ public class PlayingWithAlgo {
 	
 		public static ArrayList<Integer> exportAllUniqueElementsPair(int[] array) {
 			int longueur = array.length;
-			ArrayList<Integer> resultat = new ArrayList<Integer>();
-			HashSet<Integer> sansDoublon = new HashSet<Integer>();
+			ArrayList<Integer> result = new ArrayList<Integer>();
+			Set<Integer> resultat = new HashSet<Integer>() ;
 			for (int loop = 0; loop < longueur; loop++) {
 				if (array[loop] % 2 == 0) {
-					resultat.add(array[loop]);
+					result.add(array[loop]);
 				}
-				sansDoublon.addAll(resultat);
-				resultat.clear();
-				resultat.addAll(sansDoublon);
 			}
-			return resultat;
+	        resultat.addAll(result);
+	        ArrayList<Integer> fin = new ArrayList<Integer>(resultat);
+	        
+			return fin;
 		}
 	
 		// Done
@@ -798,23 +806,24 @@ public class PlayingWithAlgo {
 			}
 			return finiParS;
 		}
-	
+		
+		// Done
+		// ---------------------------------------------------------------------------------------
 		public static String findShortestWord(String[] array) {
 			int longueurMin = 100;
-			String[] minimum = new String[20];
+			int longueur = 0;
 			String mini = "";
 			String exept = "mu";
 			for (int i = 0; i < array.length; i++) {
-				int longueur = array[i].length();
+				if (array[i] != exept) {
+					longueur = array[i].length();
 					if (longueur < longueurMin) {
-						longueur = longueurMin;
-						minimum[i] = array[i];
-						if (minimum[i] != exept) {
-							mini = minimum[i];
-						}
+						longueurMin = longueur;
+						mini = array[i];
 					}
 				}
-				return mini;
+			}
+			return mini;
 		}
 	
 		// Done

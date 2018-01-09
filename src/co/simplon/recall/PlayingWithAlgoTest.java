@@ -59,7 +59,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * reverses the letters of each element in an array
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void reverseWordsInMyStringArray() {
 		String arrayIn[] = { "dog", "monkey", "elephant", "kayak" };
 		String arrayOut[] = { "god", "yeknom", "tnahpele", "kayak" };
@@ -73,7 +73,7 @@ public class PlayingWithAlgoTest {
 	public void reverseOrderInArray() {
 		String arrayIn[] = "dog,monkey,elephant,kayak".split(",");
 		String arrayOut[] = { "kayak", "elephant", "monkey", "dog" };
-				assertArrayEquals(arrayOut, PlayingWithAlgo.reverseOrderInArray(arrayIn));
+		assertArrayEquals(arrayOut, PlayingWithAlgo.reverseOrderInArray(arrayIn));
 	}
 
 	/**
@@ -763,7 +763,7 @@ public class PlayingWithAlgoTest {
 	}
 	
 	
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void findShortestWord() {
 		String[] arrayIn = {  "grrr", "kuku", "la", "ouf",  "mu" };
 		assertEquals("la", PlayingWithAlgo.findShortestWord(arrayIn) );
