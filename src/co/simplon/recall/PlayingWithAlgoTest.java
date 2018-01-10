@@ -89,7 +89,7 @@ public class PlayingWithAlgoTest {
 	/**
 	 * sorts an array by the last letter of each word
 	 */
-	@Test
+	@Test	//	Done	---------------------------------------------------------------------------------------
 	public void sortByLastLetter() {
 		String arrayIn[] = { "Lannister", "Stark", "Greyjoy", "Targaryen" };
 		ArrayList<String> resultat = new ArrayList<String>();
